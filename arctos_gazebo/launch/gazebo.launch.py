@@ -11,6 +11,7 @@ from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, FindExecutable, PathJoinSubstitution
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -28,12 +29,15 @@ def generate_launch_description():
     xacro_file = os.path.join(pkg_description, 'urdf', 'arctos_sim.xacro')
 
     # Build robot description from xacro
-    robot_description_content = Command([
-        FindExecutable(name='xacro'), ' ',
-        xacro_file, ' ',
-        'initial_positions_file:=', initial_positions_file, ' ',
-        'ros2_controllers_file:=', controllers_file,
-    ])
+    robot_description_content = ParameterValue(
+        Command([
+            FindExecutable(name='xacro'), ' ',
+            xacro_file, ' ',
+            'initial_positions_file:=', initial_positions_file, ' ',
+            'ros2_controllers_file:=', controllers_file,
+        ]),
+        value_type=str,
+    )
     robot_description = {'robot_description': robot_description_content}
 
     # --- Nodes ---
