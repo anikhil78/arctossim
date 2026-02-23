@@ -49,7 +49,10 @@ def generate_launch_description():
                 FindPackageShare('gazebo_ros'), 'launch', 'gazebo.launch.py'
             ])
         ]),
-        launch_arguments={'world': world_file}.items(),
+        launch_arguments={
+            'world': world_file,
+            'verbose': 'true',
+        }.items(),
     )
 
     # 2. Robot state publisher (publishes /robot_description and TF)
@@ -64,7 +67,7 @@ def generate_launch_description():
     spawn_entity = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-topic', 'robot_description', '-entity', 'arctos'],
+        arguments=['-topic', 'robot_description', '-entity', 'arctos', '-timeout', '120'],
         output='screen',
     )
 
