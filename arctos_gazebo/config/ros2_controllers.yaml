@@ -1,0 +1,40 @@
+# ros2_control configuration for Gazebo simulation.
+# Hardware-specific parameters (motor IDs, gear ratios, CAN) are removed.
+# To use with real hardware, see arctos_hardware_interface package.
+
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    arctos_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    arctos_hand_controller:
+      type: position_controllers/GripperActionController
+
+arctos_arm_controller:
+  ros__parameters:
+    joints:
+      - X_joint
+      - Y_joint
+      - Z_joint
+      - A_joint
+      - B_joint
+      - C_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+
+arctos_hand_controller:
+  ros__parameters:
+    joint: Left_jaw_joint
+    action_monitor_rate: 20.0
+    allow_stalling: false

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="arctos_ros2_control" params="name initial_positions_file">
+    <xacro:property name="initial_positions"
+      value="${xacro.load_yaml(initial_positions_file)['initial_positions']}" />
+
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <!-- Gazebo Classic simulation hardware plugin -->
+        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        <!-- For real hardware, swap with:
+             <plugin>arctos_interface/ArctosInterface</plugin> -->
+      </hardware>
+
+      <joint name="X_joint">
+        <command_interface name="position">
+          <param name="min">${-pi}</param>
+          <param name="max">${pi}</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['X_joint']}</param>
+        </state_interface>
+        <state_interface name="velocity" />
+      </joint>
+
+      <joint name="Y_joint">
+        <command_interface name="position">
+          <param name="min">-0.96</param>
+          <param name="max">2.18</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['Y_joint']}</param>
+        </state_interface>
+        <state_interface name="velocity" />
+      </joint>
+
+      <joint name="Z_joint">
+        <command_interface name="position">
+          <param name="min">${-pi/2}</param>
+          <param name="max">${55/180*pi}</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['Z_joint']}</param>
+        </state_interface>
+        <state_interface name="velocity" />
+      </joint>
+
+      <joint name="A_joint">
+        <command_interface name="position">
+          <param name="min">${-pi/2}</param>
+          <param name="max">${pi/2}</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['A_joint']}</param>
+        </state_interface>
+        <state_interface name="velocity" />
+      </joint>
+
+      <joint name="B_joint">
+        <command_interface name="position">
+          <param name="min">-1.55</param>
+          <param name="max">1.55</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['B_joint']}</param>
+        </state_interface>
+        <state_interface name="velocity" />
+      </joint>
+
+      <joint name="C_joint">
+        <command_interface name="position">
+          <param name="min">${-pi}</param>
+          <param name="max">${pi}</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['C_joint']}</param>
+        </state_interface>
+        <state_interface name="velocity" />
+      </joint>
+
+      <joint name="Left_jaw_joint">
+        <command_interface name="position">
+          <param name="min">0</param>
+          <param name="max">0.015</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">${initial_positions['Left_jaw_joint']}</param>
+        </state_interface>
+        <state_interface name="velocity" />
+      </joint>
+
+    </ros2_control>
+  </xacro:macro>
+</robot>
