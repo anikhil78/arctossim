@@ -1,0 +1,970 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Robotic Laser Surface Prep for Steel Fabrication</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- Modern fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+
+
+
+  /* ==========================
+   "WHAT WE DO" SECTION (shorter + centered)
+========================= */
+#intro.wrapper.style1 {
+  padding-top: 8em !important; /* Reduce top padding */
+  padding-bottom: 8em !important; /* Reduce bottom padding */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important; /* Vertically center */
+  align-items: center !important;
+  scroll-margin-top: 3em !important; /* Align to top when scrolled to */
+}
+#intro.wrapper.style1 .container {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+#intro.wrapper.style1 .title {
+  margin-bottom: 1.5em !important; /* Space between title and text */
+}
+#intro.wrapper.style1 p.style1 {
+  margin: 0 auto !important;
+  max-width: 50em !important; /* Keep text from being too wide */
+}
+/* Mobile adjustments */
+@media screen and (max-width: 736px) {
+  #intro.wrapper.style1 {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+  }
+}
+
+
+
+/* =================================
+   HEADER HERO (CENTERED)
+================================= */
+.homepage #header {
+  position: relative !important;
+  min-height: 22em !important; /* Narrower vertically on desktop */
+  max-height: 30em !important; /* Force maximum height */
+  background: url("Bridge.jpg") center / cover no-repeat !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important; /* Center the logo text */
+  text-align: center !important;
+}
+/* Dark overlay */
+.homepage #header::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(0, 0, 0, 0.55) !important;
+  z-index: 0 !important;
+}
+/* All header children above overlay */
+.homepage #header > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+/* ==============================
+   NAVIGATION MENU (PINNED TO TOP)
+=============================== */
+#nav {
+  position: absolute !important; /* Take it out of flex flow */
+  top: 1em !important; /* Pin very close to top */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0 !important; /* Override any main.css margins */
+}
+#nav ul {
+  display: inline-flex !important;
+  gap: 1em !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#nav a {
+  color: #fff !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif !important;
+}
+#nav a:hover,
+#nav li.current a {
+  color: #b88a2b !important;
+}
+/* Hide navigation on mobile */
+@media screen and (max-width: 736px) {
+  #nav { display: none !important; }
+}
+/* ==============================
+   HERO TEXT (NARROWER, CENTERED INDEPENDENTLY)
+=============================== */
+#logo.apiary-banner {
+  text-align: center !important;
+  max-width: 700px !important; /* Narrower on desktop */
+  padding: 1.5em !important;
+  position: relative !important; /* Keep in normal flow */
+  margin: 0 auto !important;
+}
+.apiary-brand {
+  text-decoration: none !important;
+  color: #fff !important;
+}
+.apiary-name {
+  display: block !important;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  font-size: 3.75em !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.05 !important;
+  margin-bottom: 0.35em !important;
+}
+.apiary-tagline {
+  display: block !important;
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 1.4em !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em !important;
+  color: rgba(255,255,255,0.9) !important;
+}
+/* ==============================
+   MOBILE SCALING (NARROWER)
+=============================== */
+@media screen and (max-width: 736px) {
+  .homepage #header { min-height: 18em !important; } /* Narrower vertically on mobile */
+  #logo.apiary-banner { max-width: 88% !important; padding: 1em !important; } /* Narrower on mobile */
+  .apiary-name { font-size: 2.2em !important; }
+  .apiary-tagline { font-size: 1em !important; }
+}
+/* ==========================
+   MAIN HERO + TABS
+========================= */
+#main.wrapper.style2 {
+  position: relative !important;
+  overflow: hidden !important; /* Changed from visible to hidden to clip color bars */
+  background: var(--active-hero-bg, none) center / cover no-repeat !important;
+  scroll-margin-top: 0.1em !important; /* Scroll 3.5em higher than default */
+}
+/* Full-hero black overlay */
+#main.wrapper.style2::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(0,0,0,0.8) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+/* ==========================
+   TOP PILL
+========================= */
+#main.wrapper.style2 > .tab-buttons {
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: min(62rem, calc(100% - 4rem)) !important;
+  height: 3.25em !important;
+  line-height: 3.25em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  font-size: 0.98em !important;
+  z-index: 40 !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+/* Blocks extending to edges (DESKTOP ONLY) */
+#main.wrapper.style2 > .tab-buttons::before,
+#main.wrapper.style2 > .tab-buttons::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  height: 100% !important;
+  width: 50vw !important; /* Changed from 100vw to 50vw to better control extension */
+  background-color: #b88a2b !important;
+  background-image: url("overlay.png") !important;
+  background-repeat: repeat !important;
+  background-position: top left !important;
+  background-size: auto !important;
+  z-index: -1 !important;
+}
+#main.wrapper.style2 > .tab-buttons::before { right: 100% !important; }
+#main.wrapper.style2 > .tab-buttons::after  { left: 100% !important; }
+/* Mobile: limit color bar extension */
+@media screen and (max-width: 736px) {
+  #main.wrapper.style2 > .tab-buttons::before,
+  #main.wrapper.style2 > .tab-buttons::after {
+    width: calc(50vw - 1rem) !important; /* Stops at screen edge minus small margin */
+  }
+}
+/* Shadow "ears" */
+#main.wrapper.style2 > .tab-buttons .shadow-ear-left,
+#main.wrapper.style2 > .tab-buttons .shadow-ear-right {
+  display: block !important;
+  position: absolute !important;
+  top: 100% !important;
+  width: 35px !important;
+  height: 38px !important;
+  background: url("shadow.png") no-repeat !important;
+  z-index: 45 !important;
+}
+#main.wrapper.style2 > .tab-buttons .shadow-ear-left { left: -35px !important; }
+#main.wrapper.style2 > .tab-buttons .shadow-ear-right { right: -35px !important; transform: scaleX(-1) !important; }
+/* LI cell */
+#main.wrapper.style2 > .tab-buttons > li {
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* Divider lines between cells */
+#main.wrapper.style2 > .tab-buttons > li + li {
+  border-left: 1px solid rgba(255,255,255,0.25) !important;
+}
+/* Buttons fill cell */
+#main.wrapper.style2 > .tab-buttons button {
+  all: unset;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 1.35rem !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  transition: background 0.12s ease, color 0.12s ease !important;
+}
+#main.wrapper.style2 > .tab-buttons button:hover {
+  background: rgba(255,255,255,0.1) !important;
+}
+#main.wrapper.style2 > .tab-buttons button[aria-selected="true"] {
+  background: transparent !important;
+  color: #ffffff !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2) !important;
+}
+/* SHOW/HIDE DESKTOP vs MOBILE LABELS */
+#main.wrapper.style2 .tab-buttons .label-desktop { display: inline !important; }
+#main.wrapper.style2 .tab-buttons .label-mobile { display: none !important; }
+@media screen and (max-width: 736px) {
+  #main.wrapper.style2 .tab-buttons .label-desktop { display: none !important; }
+  #main.wrapper.style2 .tab-buttons .label-mobile { display: inline !important; }
+}
+/* ==========================
+   Responsive pill sizing
+========================= */
+@media screen and (min-width: 980px) {
+  #main.wrapper.style2 > .tab-buttons {
+    width: min(74rem, calc(100% - 6rem)) !important;
+    height: 3.9em !important;
+    line-height: 3.9em !important;
+    font-size: 1.08em !important;
+    letter-spacing: 0.16em !important;
+  }
+}
+@media screen and (max-width: 980px) {
+  #main.wrapper.style2 > .tab-buttons {
+    width: min(74rem, calc(100% - 6rem)) !important;
+    height: 3.6em !important;
+    font-size: 1em !important;
+  }
+}
+@media screen and (max-width: 736px) {
+  #main.wrapper.style2 > .tab-buttons {
+    top: 0 !important;
+    height: 2.5em !important;
+    line-height: 2.5em !important;
+    width: calc(100% - 2rem) !important;
+    font-size: 0.84em !important;
+    letter-spacing: 0.10em !important;
+  }
+  #main.wrapper.style2 > .tab-buttons button { padding: 0 0.85rem !important; }
+}
+/* ==========================
+   Tab panels
+========================= */
+#main .tab-panel {
+  display: block !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+#main .tab-panel.active {
+  visibility: visible !important;
+  position: relative !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+/* ==========================
+   Hero content inside panel - LAZY LOAD ANIMATION
+========================= */
+#main .tab-hero {
+  position: relative !important;
+  margin-top: 0 !important;
+  min-height: 400px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 2 !important;
+  background: none !important;
+}
+#main .tab-hero .hero-inner {
+  position: relative !important;
+  z-index: 3 !important;
+  width: min(68em, 100%) !important;
+  padding: 2.75em 2.25em !important;
+  text-align: center !important;
+  color: rgba(255,255,255,0.92) !important;
+  opacity: 0 !important;
+  transform: translateY(40px) !important;
+  transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s !important;
+}
+/* Fade in when scrolled into view */
+#main .tab-hero .hero-inner.lazy-loaded {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+@media screen and (max-width: 980px) {
+  #main .tab-hero { min-height: 300px !important; }
+  #main .tab-hero .hero-inner { padding: 2em 1.5em !important; }
+}
+@media screen and (max-width: 736px) {
+  #main .tab-hero { min-height: 260px !important; align-items: flex-start !important; }
+  #main .tab-hero .hero-inner { padding: 1.5em 1.15em !important; text-align: left !important; }
+}
+#highlights {
+  position: relative !important;
+  z-index: 50 !important;
+  scroll-margin-top: 3em !important; /* Align to top when scrolled to */
+}
+/* Mobile adjustments - add padding to prevent overlap with Contact section */
+@media screen and (max-width: 736px) {
+  #highlights {
+    padding-bottom: 6em !important;
+  }
+}
+#footer.wrapper {
+  margin-top: -4em !important;
+  position: relative !important;
+  z-index: 60 !important;
+  scroll-margin-top: 3em !important; /* Align to top when scrolled to */
+}
+/* Fix mobile overlap - remove negative margin on mobile */
+@media screen and (max-width: 736px) {
+  #footer.wrapper {
+    margin-top: 0 !important;
+  }
+}
+/* Ensure the page wrapper stretches to the bottom */
+#page-wrapper {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  scroll-behavior: smooth !important; /* Smooth scrolling for the entire page */
+}
+/* Make the last section (footer) sit at the bottom with no extra space */
+#footer.wrapper {
+  margin-bottom: 0 !important;
+  padding-bottom: 2em !important;
+}
+/* Remove extra bottom margin from copyright list */
+#copyright {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+/* Smooth scrolling for html element as well */
+html {
+  scroll-behavior: smooth !important;
+}
+/* ==========================
+   FEATURE CARD STYLING - CONSISTENT SIZING
+========================= */
+/* Grid container for cards */
+.feature-list .row {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 1.5em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* Remove default row padding/margins */
+.feature-list .row > * {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+/* Card container */
+.feature-list section {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  padding: 1.75em 1.25em !important;
+  min-height: 200px !important; /* Slightly smaller cards */
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-top: none !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+/* Icon styling - centered above title */
+.feature-list section h3 {
+  margin: 0 0 0.6em 0 !important;
+  padding-left: 0 !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  font-size: 1.1em !important; /* Smaller yellow title text */
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
+.feature-list section h3::before {
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 0.7em auto !important;
+  width: 2.6em !important; /* Smaller icon circle */
+  height: 2.6em !important;
+  line-height: 2.6em !important;
+  border-radius: 50% !important;
+  font-size: 1em !important; /* Smaller icon */
+}
+.feature-list section p {
+  margin: 0 !important;
+  flex-grow: 1 !important;
+  font-size: 0.95em !important; /* Slightly smaller body text */
+  line-height: 1.6em !important;
+}
+/* Section titles (white headings above card rows) */
+.section-heading {
+  color: #fff !important;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif !important;
+  font-size: 1.5em !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-align: center !important;
+  margin: 0 0 1.5em 0 !important;
+  text-transform: uppercase !important;
+}
+.section-heading.mid-section {
+  margin-top: 2.5em !important;
+}
+/* Mobile: single column */
+@media screen and (max-width: 736px) {
+  .feature-list .row {
+    grid-template-columns: 1fr !important;
+    gap: 1em !important;
+  }
+
+  .feature-list section {
+    padding: 1.25em 1em !important;
+    min-height: auto !important;
+  }
+
+  .feature-list section h3 {
+    font-size: 1em !important;
+  }
+
+  .feature-list section h3::before {
+    width: 2.4em !important;
+    height: 2.4em !important;
+    line-height: 2.4em !important;
+    font-size: 0.95em !important;
+  }
+
+  .feature-list section p {
+    font-size: 0.9em !important;
+  }
+
+  .section-heading {
+    font-size: 1.2em !important;
+  }
+}
+/* Tablet adjustments */
+@media screen and (max-width: 980px) and (min-width: 737px) {
+  .feature-list section {
+    min-height: 180px !important;
+  }
+}
+  </style>
+</head>
+<body class="homepage is-preload">
+<div id="page-wrapper">
+  <!-- HEADER -->
+  <section id="header" class="wrapper">
+    <nav id="nav">
+      <ul>
+        <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="team.html">About Us</a></li>
+      </ul>
+    </nav>
+    <div id="logo" class="apiary-banner">
+      <a href="index.html" class="apiary-brand">
+        <span class="apiary-name">Apiary Robotics</span>
+        <span class="apiary-tagline">Robotic Laser Surface Prep for Steel Fabrication</span>
+      </a>
+    </div>
+  </section>
+  <!-- INTRO -->
+  <section id="intro" class="wrapper style1">
+    <div class="title"><a href="#intro" class="section-link" style="color: inherit; text-decoration: none;">What We Do</a></div>
+    <div class="container">
+      <p class="style1">Apiary Robotics is building autonomous mobile robots that use high-power lasers to remove rust and prepare steel surfaces in structural steel fabrication shops. Our robots replace manual grinding, needlegunning, and inflexible shotblasting systems with a faster, cleaner, and more consistent approach to surface preparation.</p>
+    </div>
+  </section>
+  <!-- MAIN HERO WITH TABS -->
+  <section id="main" class="wrapper style2">
+    <ul class="tab-buttons" role="tablist" aria-label="Details tabs">
+      <span class="shadow-ear-left"></span>
+      <span class="shadow-ear-right"></span>
+      <li>
+        <button type="button" role="tab" id="details-tab-1" aria-controls="details-panel-1" aria-selected="true" data-tab="1">
+          <span class="label-desktop">The Problem</span><span class="label-mobile">Problem</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="details-tab-2" aria-controls="details-panel-2" aria-selected="false" data-tab="2">
+          <span class="label-desktop">The Solution</span><span class="label-mobile">Solution</span>
+        </button>
+      </li>
+      <li>
+        <button type="button" role="tab" id="details-tab-3" aria-controls="details-panel-3" aria-selected="false" data-tab="3">
+          <span class="label-desktop">The Benefits</span><span class="label-mobile">Benefits</span>
+        </button>
+      </li>
+    </ul>
+    <div class="container">
+      <div class="details-tabs" id="detailsTabs">
+        <!-- Tab panel 1: The Problem -->
+        <section class="tab-panel active" id="details-panel-1" role="tabpanel" aria-labelledby="details-tab-1">
+          <div class="panel-box">
+            <div class="tab-hero" style="--hero-bg: url('Problem.jpg');">
+              <div class="hero-inner">
+                <section id="features">
+                  <h2 class="section-heading">Surface Prep Today</h2>
+                  <p style="max-width: 58em; margin: 0 auto 2em auto;">
+                    Structural steel arrives at fabrication shops covered in mill scale, rust, and contaminants that must be removed before coating. Today's surface prep methods each carry significant drawbacks that drive up costs, slow production, and create hazardous working conditions:
+                  </p>
+                  <div class="feature-list">
+                    <div class="row">
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-user-hard-hat">Labor-Intensive Manual Methods</h3>
+                          <p>
+                            Manual grinding and needlegunning are slow, physically demanding, and heavily dependent on operator skill. Shops struggle to hire and retain workers for this grueling work, creating a persistent labor bottleneck.
+                          </p>
+                        </section>
+                      </div>
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-random">Inconsistent Surface Quality</h3>
+                          <p>
+                            Hand-held tools produce variable results depending on operator technique, fatigue, and time pressure. Inconsistent surface profiles lead to coating failures, rework, and warranty claims downstream.
+                          </p>
+                        </section>
+                      </div>
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-exclamation-triangle">Health and Safety Hazards</h3>
+                          <p>
+                            Grinding and needlegunning generate metal dust, noise, and vibration that cause long-term health issues including hearing loss, respiratory disease, and hand-arm vibration syndrome. These are among the most injury-prone tasks in a fab shop.
+                          </p>
+                        </section>
+                      </div>
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-box-open">Shotblasting Limitations</h3>
+                          <p>
+                            Automated shotblast lines offer throughput but are limited to simple shapes that fit the machine. They require major capital investment, consume large amounts of abrasive media, and generate significant waste that must be managed and disposed of.
+                          </p>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Tab panel 2: The Solution -->
+        <section class="tab-panel" id="details-panel-2" role="tabpanel" aria-labelledby="details-tab-2">
+          <div class="panel-box">
+            <div class="tab-hero" style="--hero-bg: url('Solution2.jpg');">
+              <div class="hero-inner">
+                <section id="features">
+                  <h2 class="section-heading">Our Approach</h2>
+                  <div class="feature-list">
+                    <div class="row">
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-robot">Mobile Factory Robot</h3>
+                          <p>
+                            Our robot moves autonomously around the fabrication shop floor, navigating to workpieces rather than requiring steel to be fed through a fixed machine. A 6-axis arm reaches around complex geometries to prep surfaces that shotblast lines simply cannot handle.
+                          </p>
+                        </section>
+                      </div>
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-bolt">High-Power Laser Cleaning</h3>
+                          <p>
+                            Our laser precisely ablates rust, mill scale, and contaminants down to bare metal without damaging the steel substrate. No abrasive media, no dust clouds, no spent grit to dispose of — just clean steel ready for coating.
+                          </p>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 class="section-heading mid-section">What Sets Us Apart</h2>
+                  <div class="feature-list">
+                    <div class="row">
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-route">Flexible, Not Fixed</h3>
+                          <p>
+                            Unlike shotblast lines that require steel to conform to the machine, our robot conforms to the steel. It handles beams, plates, channels, angles, and complex weldments — adapting to whatever the shop is fabricating that day.
+                          </p>
+                        </section>
+                      </div>
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-microchip">Autonomous Operation</h3>
+                          <p>
+                            The robot works with minimal human oversight, freeing skilled workers for higher-value tasks. It navigates the shop floor, identifies surfaces to prep, and executes cleaning paths automatically — reducing dependence on hard-to-find labor.
+                          </p>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Tab panel 3: The Benefits -->
+        <section class="tab-panel" id="details-panel-3" role="tabpanel" aria-labelledby="details-tab-3">
+          <div class="panel-box">
+            <div class="tab-hero" style="--hero-bg: url('Benefits.jpg');">
+              <div class="hero-inner">
+                <section id="features">
+                  <h2 class="section-heading">The Impact</h2>
+                  <div class="feature-list">
+                    <div class="row">
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-bullseye">Consistent, Repeatable Quality</h3>
+                          <p>
+                            Laser ablation delivers uniform surface profiles every time, independent of operator skill or fatigue. Consistent prep quality means better coating adhesion, fewer rejects, and reduced rework across every job.
+                          </p>
+                        </section>
+                      </div>
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-shield-alt">Safer Work Environment</h3>
+                          <p>
+                            Eliminating manual grinding and needlegunning removes workers from exposure to metal dust, excessive noise, and vibration injuries. The robot handles the most hazardous surface prep tasks so your team doesn't have to.
+                          </p>
+                        </section>
+                      </div>
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-leaf">No Abrasive Waste</h3>
+                          <p>
+                            Laser cleaning generates no spent media, no dust clouds, and no secondary waste streams. This eliminates abrasive purchasing costs, reduces cleanup time, and simplifies environmental compliance.
+                          </p>
+                        </section>
+                      </div>
+                      <div class="col-6 col-12-medium">
+                        <section>
+                          <h3 class="icon solid fa-tachometer-alt">Higher Throughput</h3>
+                          <p>
+                            An autonomous robot that works continuously without breaks, shift changes, or fatigue-related slowdowns keeps your production line moving. Faster surface prep means faster time from raw steel to coated, finished product.
+                          </p>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+  <!-- Highlights -->
+  <section id="highlights" class="wrapper style3">
+    <div class="title"><a href="#highlights" class="section-link" style="color: inherit; text-decoration: none;">Case Studies</a></div>
+    <div class="container">
+      <div class="row aln-center">
+        <div class="col-4 col-12-medium">
+          <section class="highlight">
+            <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+            <ul class="actions">
+              <li><a href="#" class="button style1">Coming Soon</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <section id="footer" class="wrapper">
+    <div class="title"><a href="#footer" class="section-link" style="color: inherit; text-decoration: none;">Contact</a></div>
+    <div class="container">
+      <header class="style1">
+        <h2>Interested in Working With Us?</h2>
+        <p>We'd love to get in touch! Please fill out the form below to send us a message.</p>
+      </header>
+      <div class="row">
+        <div class="col-6 col-12-medium">
+          <section>
+            <form method="post" action="contact.php" id="contact-form">
+              <div class="row gtr-50">
+                <div class="col-6 col-12-small">
+                  <input type="text" name="name" id="contact-name" placeholder="Name" required />
+                </div>
+                <div class="col-6 col-12-small">
+                  <input type="email" name="email" id="contact-email" placeholder="Email" required />
+                </div>
+                <div class="col-12">
+                  <textarea name="message" id="contact-message" placeholder="Message" rows="4" required></textarea>
+                </div>
+                <div class="col-12">
+                  <div id="form-messages" style="margin-bottom: 1em; padding: 1em; display: none; border-radius: 4px;"></div>
+                  <ul class="actions">
+                    <li><input type="submit" class="style1" value="Send" /></li>
+                    <li><input type="reset" class="style2" value="Reset" /></li>
+                  </ul>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+        <div class="col-6 col-12-medium">
+          <section class="feature-list small">
+            <div class="row">
+              <div class="col-6 col-12-small">
+                <section>
+                  <h3 class="icon solid fa-comment">Social</h3>
+                  <p><a href="https://www.linkedin.com/company/apiaryrobotics">LinkedIn</a></p>
+                </section>
+              </div>
+              <div class="col-6 col-12-small">
+                <section>
+                  <h3 class="icon solid fa-phone">Phone</h3>
+                  <p>(781) 514-6920</p>
+                </section>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div id="copyright">
+        <ul>
+          <li>&copy; Apiary Robotics.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+(function () {
+  const topPill = document.querySelector('#main > .tab-buttons');
+  const panelsRoot = document.getElementById('detailsTabs');
+  if (!topPill || !panelsRoot) return;
+  const buttons = [...topPill.querySelectorAll('[role="tab"]')];
+  const panels = [...panelsRoot.querySelectorAll('[role="tabpanel"]')];
+  // Intersection Observer for lazy loading effect
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1 // Trigger when 10% of the element is visible
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const heroInner = entry.target;
+        // Add a brief delay for the lazy-load effect
+        setTimeout(() => {
+          heroInner.classList.add('lazy-loaded');
+        }, 100);
+        observer.unobserve(heroInner); // Stop observing once loaded
+      }
+    });
+  }, observerOptions);
+  function syncHero(tabNum) {
+    const panel = document.getElementById('details-panel-' + tabNum);
+    if (!panel) return;
+    const hero = panel.querySelector('.tab-hero');
+    if (!hero) return;
+    const bg = hero.style.getPropertyValue('--hero-bg');
+    if (bg) document.getElementById('main').style.setProperty('--active-hero-bg', bg);
+  }
+  function activate(tabNum, shouldScroll = false) {
+    buttons.forEach(btn => btn.setAttribute('aria-selected', btn.dataset.tab === tabNum));
+
+    // Remove active class from all panels and reset their hero-inner
+    panels.forEach(panel => {
+      panel.classList.remove('active');
+      const heroInner = panel.querySelector('.hero-inner');
+      if (heroInner) {
+        heroInner.classList.remove('lazy-loaded');
+        // Stop observing if it was being observed
+        observer.unobserve(heroInner);
+      }
+    });
+
+    // Add active class to the selected panel
+    const activePanel = document.getElementById('details-panel-' + tabNum);
+    if (activePanel) {
+      activePanel.classList.add('active');
+      const heroInner = activePanel.querySelector('.hero-inner');
+      if (heroInner) {
+        // Start observing this element for lazy load
+        observer.observe(heroInner);
+      }
+    }
+
+    syncHero(tabNum);
+
+    // Scroll to #main section if requested
+    if (shouldScroll) {
+      document.getElementById('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    const activeBtn = buttons.find(b => b.dataset.tab === tabNum);
+    if (activeBtn) activeBtn.focus({preventScroll:true});
+  }
+  buttons.forEach(btn => btn.addEventListener('click', () => activate(btn.dataset.tab, true)));
+  topPill.addEventListener('keydown', e => {
+    let idx = buttons.findIndex(b => b.getAttribute('aria-selected') === 'true');
+    if (idx < 0) return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const dir = e.key === 'ArrowRight' ? 1 : -1;
+      const next = (idx + dir + buttons.length) % buttons.length;
+      activate(buttons[next].dataset.tab, true);
+      buttons[next].focus();
+    }
+  });
+  syncHero('1');
+
+  // Initialize first tab's content with observer
+  const firstPanel = document.getElementById('details-panel-1');
+  if (firstPanel) {
+    const heroInner = firstPanel.querySelector('.hero-inner');
+    if (heroInner) {
+      observer.observe(heroInner);
+    }
+  }
+
+  // Add click handlers for section title links
+  document.querySelectorAll('.section-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Handle contact form submission
+  const contactForm = document.getElementById('contact-form');
+  const formMessages = document.getElementById('form-messages');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Serialize the form data
+      const formData = new FormData(contactForm);
+
+      // Submit the form via AJAX
+      fetch('contact.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        // Display the message
+        formMessages.style.display = 'block';
+        formMessages.textContent = data;
+
+        // Check if the submission was successful
+        if (data.includes('Thank you')) {
+          formMessages.style.backgroundColor = '#d4edda';
+          formMessages.style.color = '#155724';
+          formMessages.style.border = '1px solid #c3e6cb';
+          contactForm.reset();
+        } else {
+          formMessages.style.backgroundColor = '#f8d7da';
+          formMessages.style.color = '#721c24';
+          formMessages.style.border = '1px solid #f5c6cb';
+        }
+
+        // Hide the message after 5 seconds
+        setTimeout(() => {
+          formMessages.style.display = 'none';
+        }, 5000);
+      })
+      .catch(error => {
+        formMessages.style.display = 'block';
+        formMessages.textContent = 'An error occurred. Please try again.';
+        formMessages.style.backgroundColor = '#f8d7da';
+        formMessages.style.color = '#721c24';
+        formMessages.style.border = '1px solid #f5c6cb';
+      });
+    });
+  }
+})();
+</script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
